@@ -30,7 +30,7 @@ code_blocks:
 # Social media
 social:
   fas fa-rss: /atom.xml || RSS || '#00a8ff'
-  fas fa-envelope: mailto:zika001@zika001.cc.cd || Email || '#ffffff'
+  fas fa-envelope: mailto:zika@zika.cc.cd || Email || '#ffffff'
 
 # Images
 favicon: /img/favicon.png
