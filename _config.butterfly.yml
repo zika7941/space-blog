@@ -1,0 +1,449 @@
+# ============================================
+# Butterfly Theme Config — SpaceX 太空科技风格
+# ============================================
+
+# Navigation
+nav:
+  logo:
+  display_title: true
+  display_post_title: true
+  fixed: true
+
+menu:
+  首页: / || fas fa-rocket
+  归档: /archives/ || fas fa-archive
+  分类: /categories/ || fas fa-layer-group
+  标签: /tags/ || fas fa-tags
+  关于: /about/ || fas fa-info-circle
+
+# Code Blocks — 深色科技风
+code_blocks:
+  theme: darker
+  macStyle: false
+  height_limit: false
+  word_wrap: false
+  copy: true
+  language: true
+  shrink: false
+  fullpage: false
+
+# Social media
+social:
+  fas fa-rss: /atom.xml || RSS || '#00a8ff'
+  fas fa-envelope: mailto:zika001@zika001.cc.cd || Email || '#ffffff'
+
+# Images
+favicon: /img/favicon.png
+
+avatar:
+  img: /img/avatar.png
+  effect: true
+
+disable_top_img: false
+
+# 默认顶部图 — 深空星云
+default_top_img: https://images.unsplash.com/photo-1446776812061-1e8f4a1a3c52?w=1920&q=80
+
+# 首页 banner — 火箭发射
+index_img: https://images.unsplash.com/photo-1517976332405-cb9b77a96c1e?w=1920&q=80
+
+archive_img: https://images.unsplash.com/photo-1517976332405-cb9b77a96c1e?w=1920&q=80
+
+footer_img: false
+
+# 纯黑背景（SpaceX 风格）
+background: "#000000"
+
+cover:
+  index_enable: true
+  aside_enable: true
+  archives_enable: true
+  default_cover:
+    - https://images.unsplash.com/photo-1543722530-ce2b9f3a3d3b?w=800&q=80
+    - https://images.unsplash.com/photo-1614728894747-a8d965523a3e?w=800&q=80
+    - https://images.unsplash.com/photo-1606543597902-83a44f1a9a6b?w=800&q=80
+    - https://images.unsplash.com/photo-1581829537009-9b5e4d83f1e9?w=800&q=80
+    - https://images.unsplash.com/photo-1454789545555-16f990fe273f?w=800&q=80
+
+error_img:
+  flink: /img/friend_404.gif
+  post_page: /img/404.jpg
+
+error_404:
+  enable: true
+  subtitle: '迷失在深空中...'
+  background: https://images.unsplash.com/photo-1419242908494-8ec1c1bc1e6c?w=1920&q=80
+
+post_meta:
+  page:
+    date_type: created
+    date_format: date
+    categories: true
+    tags: false
+    label: true
+  post:
+    position: left
+    date_type: both
+    date_format: date
+    categories: true
+    tags: true
+    label: true
+
+# Index page
+index_site_info_top: 40%
+index_top_img_height: 100vh
+
+# 首页副标题 — 打字机效果
+subtitle:
+  enable: true
+  effect: true
+  typed_option:
+    typeSpeed: 60
+    backSpeed: 30
+    startDelay: 300
+    backDelay: 2000
+    loop: true
+  source: false
+  sub:
+    - 探索宇宙 · 驶向星辰大海
+    - Ad Astra Per Aspera
+    - Making Humanity Multiplanetary
+    - 火箭 · 星舰 · 深空探测
+    - The Future of Space Technology
+
+index_layout: 3
+
+index_post_content:
+  method: 3
+  length: 300
+
+# Post Settings
+toc:
+  post: true
+  page: false
+  number: true
+  expand: false
+  style_simple: false
+  scroll_percent: true
+
+post_copyright:
+  enable: true
+  decode: false
+  author_href: https://zika001.cc.cd
+  license: CC BY-NC-SA 4.0
+  license_url: https://creativecommons.org/licenses/by-nc-sa/4.0/
+
+reward:
+  enable: false
+
+post_edit:
+  enable: false
+
+related_post:
+  enable: true
+  limit: 6
+  date_type: created
+
+post_pagination: 1
+
+noticeOutdate:
+  enable: false
+
+# Footer
+footer:
+  nav:
+  owner:
+    enable: true
+    since: 2025
+  copyright:
+    enable: true
+    version: true
+  custom_text: 🚀 To Mars and Beyond
+
+# Aside
+aside:
+  enable: true
+  hide: false
+  button: true
+  mobile: true
+  position: right
+  display:
+    archive: true
+    tag: true
+    category: true
+  card_author:
+    enable: true
+    description: 太空科技爱好者 · 关注火箭、星舰与深空探索
+    button:
+      enable: false
+  card_announcement:
+    enable: true
+    content: 🚀 本博客关注全球太空科技前沿动态
+  card_recent_post:
+    enable: true
+    limit: 5
+    sort: date
+  card_newest_comments:
+    enable: false
+  card_categories:
+    enable: true
+    limit: 8
+    expand: none
+  card_tags:
+    enable: true
+    limit: 40
+    color: false
+    orderby: random
+    order: 1
+  card_archives:
+    enable: true
+    type: monthly
+    format: YYYY年MM月
+    order: -1
+    limit: 8
+  card_post_series:
+    enable: true
+    series_title: false
+    orderBy: 'date'
+    order: -1
+  card_webinfo:
+    enable: true
+    post_count: true
+    last_push_date: true
+    runtime_date: 2025/01/01 00:00:00
+
+# Bottom right buttons
+rightside_bottom:
+
+translate:
+  enable: false
+
+readmode: true
+
+# Dark mode — 默认深色
+darkmode:
+  enable: true
+  button: true
+  autoChangeMode: false
+
+rightside_scroll_percent: true
+
+rightside_config_animation: true
+
+anchor:
+  auto_update: false
+  click_to_scroll: false
+
+photofigcaption: false
+
+copy:
+  enable: true
+  copyright:
+    enable: false
+    limit_count: 150
+
+wordcount:
+  enable: true
+  post_wordcount: true
+  min2read: true
+  total_wordcount: true
+
+busuanzi:
+  site_uv: true
+  site_pv: true
+  page_pv: true
+
+# Math
+math:
+  use:
+  per_page: true
+  hide_scrollbar: false
+  mathjax:
+    enableMenu: true
+    tags: none
+  katex:
+    copy_tex: false
+
+# Search — 本地搜索
+search:
+  use: local_search
+  placeholder: 搜索太空科技文章...
+  local_search:
+    preload: true
+    top_n_per_article: 3
+    unescape: false
+    pagination:
+      enable: false
+      hitsPerPage: 8
+
+# Share
+share:
+  use: sharejs
+  sharejs:
+    sites: wechat,weibo,qq,twitter,facebook
+
+# Comments — 暂不启用
+comments:
+  use:
+
+# Chat
+chat:
+  use:
+
+# Analysis
+baidu_analytics:
+google_analytics:
+
+# Beautify / Effect
+# SpaceX 风格主题色 — 深黑底 + 白色 + 科技蓝
+theme_color:
+  enable: true
+  main: "#00a8ff"
+  paginator: "#00a8ff"
+  button_hover: "#0088cc"
+  text_selection: "#00a8ff"
+  link_color: "#00a8ff"
+  meta_color: "#888888"
+  hr_color: "#222222"
+  code_foreground: "#00a8ff"
+  code_background: "rgba(0, 168, 255, 0.1)"
+  toc_color: "#00a8ff"
+  blockquote_padding_color: "#00a8ff"
+  blockquote_background_color: "#111111"
+  scrollbar_color: "#00a8ff"
+  meta_theme_color_light: "#ffffff"
+  meta_theme_color_dark: "#000000"
+
+category_ui:
+tag_ui:
+
+rounded_corners_ui: false
+
+text_align_justify: false
+
+mask:
+  header: true
+  footer: false
+
+# 加载动画 — 火箭发射感
+preloader:
+  enable: true
+  source: 1
+
+enter_transitions: true
+
+# 默认深色模式
+display_mode: dark
+
+beautify:
+  enable: false
+
+# 字体 — 现代无衬线
+font:
+  global_font_size:
+  code_font_size: 14px
+  font_family: ' -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans SC", sans-serif'
+  code_font_family: '"JetBrains Mono", "Fira Code", Consolas, Monaco, monospace'
+
+blog_title_font:
+  font_link: https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap
+  font_family: '"Orbitron", "Noto Sans SC", sans-serif'
+
+hr_icon:
+  enable: true
+  icon: '\f135'
+  icon_top:
+
+activate_power_mode:
+  enable: false
+
+# Canvas nest — 星空粒子效果
+canvas_nest:
+  enable: true
+  color: '0,168,255'
+  opacity: 0.5
+  zIndex: -1
+  count: 120
+  mobile: false
+
+canvas_ribbon:
+  enable: false
+
+canvas_fluttering_ribbon:
+  enable: false
+
+# 鼠标点击烟花效果
+fireworks:
+  enable: true
+  zIndex: 9999
+  mobile: false
+
+click_heart:
+  enable: false
+
+clickShowText:
+  enable: false
+
+# Lightbox
+lightbox: fancybox
+
+# Tag Plugins
+series:
+  enable: false
+
+abcjs:
+  enable: false
+
+mermaid:
+  enable: false
+
+chartjs:
+  enable: false
+
+note:
+  style: flat
+  icons: true
+  border_radius: 3
+  light_bg_offset: 0
+
+# Other Settings
+pjax:
+  enable: false
+
+snackbar:
+  enable: false
+
+instantpage: true
+
+lazyload:
+  enable: true
+  native: false
+  field: site
+  placeholder:
+  blur: true
+
+pwa:
+  enable: false
+
+Open_Graph_meta:
+  enable: true
+
+structured_data:
+  enable: false
+
+css_prefix: true
+
+# Inject — 自定义 SpaceX 风格 CSS
+inject:
+  head:
+    - <link rel="preconnect" href="https://fonts.googleapis.com">
+    - <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    - <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6/css/all.min.css">
+    - <link rel="stylesheet" href="/css/spacex-style.css">
+  bottom:
+
+# CDN
+CDN:
+  internal_provider: local
+  third_party_provider: jsdelivr
+  version: true

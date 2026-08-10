@@ -1,0 +1,50 @@
+/* SpaceX-style overrides */
+
+#page-header { background-color: #000 !important; }
+#site-title, #site-subtitle { text-shadow: 0 0 20px rgba(0,168,255,0.5) !important; }
+#nav-menu .menus_item a { font-weight: 500; }
+.layout { background: transparent !important; }
+.article-container { background: rgba(10,10,10,0.8) !important; }
+body { background-color: #000 !important; }
+#footer { background: #0a0a0a !important; }
+.post-block { background: rgba(15,15,15,0.9) !important; }
+a { transition: color 0.2s; }
+.card-content { background: rgba(15,15,15,0.85) !important; }
+::selection { background: rgba(0,168,255,0.3) !important; }
+#toggle-mode { display: none !important; }
+
+/* 首页标题发光 */
+#site-title {
+  font-family: "Orbitron", sans-serif !important;
+  letter-spacing: 3px;
+}
+
+/* 导航栏 */
+#nav {
+  backdrop-filter: blur(10px);
+  background: rgba(0,0,0,0.7) !important;
+}
+
+/* 文章卡片悬停效果 */
+.recent-post-item {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.recent-post-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 30px rgba(0,168,255,0.15);
+}
+
+/* 滚动条 */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: #000; }
+::-webkit-scrollbar-thumb { background: #00a8ff; border-radius: 4px; }
+
+/* 分页器 */
+.page-nav a, .page-nav span {
+  background: rgba(0,168,255,0.1) !important;
+  border: 1px solid rgba(0,168,255,0.3) !important;
+}
+.page-nav .current {
+  background: #00a8ff !important;
+  color: #000 !important;
+}
