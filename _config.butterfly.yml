@@ -243,15 +243,15 @@ copy:
     limit_count: 150
 
 wordcount:
-  enable: true
+  enable: false
   post_wordcount: true
   min2read: true
   total_wordcount: true
 
 busuanzi:
-  site_uv: true
-  site_pv: true
-  page_pv: true
+  site_uv: false
+  site_pv: false
+  page_pv: false
 
 # Math
 math:
@@ -266,15 +266,8 @@ math:
 
 # Search — 本地搜索
 search:
-  use: local_search
-  placeholder: 搜索太空科技文章...
-  local_search:
-    preload: true
-    top_n_per_article: 3
-    unescape: false
-    pagination:
-      enable: false
-      hitsPerPage: 8
+  use:
+  placeholder:
 
 # Share
 share:
