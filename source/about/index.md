@@ -19,8 +19,8 @@ layout: "about"
 
 ## 📧 联系我
 
-- 邮箱：zika266618@zika266618.cc.cd
-- 域名：[zika266618.cc.cd](https://zika266618.cc.cd)
+- 邮箱：zika@zika.cc.cd
+- 域名：[zika.cc.cd](https://zika.cc.cd)
 
 ## 📜 版权说明
 
