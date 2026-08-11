@@ -1,4 +1,4 @@
-# ============================================
+﻿# ============================================
 # Butterfly Theme Config — SpaceX 太空科技风格
 # ============================================
 
@@ -42,12 +42,12 @@ avatar:
 disable_top_img: false
 
 # 默认顶部图 — 深空星云
-default_top_img: https://images.unsplash.com/photo-1446776812061-1e8f4a1a3c52?w=1920&q=80
+default_top_img: /img/cosmic-bg.svg
 
 # 首页 banner — 火箭发射
-index_img: https://images.unsplash.com/photo-1517976332405-cb9b77a96c1e?w=1920&q=80
+index_img: /img/cosmic-bg.svg
 
-archive_img: https://images.unsplash.com/photo-1517976332405-cb9b77a96c1e?w=1920&q=80
+archive_img: /img/cosmic-bg.svg
 
 footer_img: false
 
@@ -59,11 +59,11 @@ cover:
   aside_enable: true
   archives_enable: true
   default_cover:
-    - https://images.unsplash.com/photo-1543722530-ce2b9f3a3d3b?w=800&q=80
-    - https://images.unsplash.com/photo-1614728894747-a8d965523a3e?w=800&q=80
-    - https://images.unsplash.com/photo-1606543597902-83a44f1a9a6b?w=800&q=80
-    - https://images.unsplash.com/photo-1581829537009-9b5e4d83f1e9?w=800&q=80
-    - https://images.unsplash.com/photo-1454789545555-16f990fe273f?w=800&q=80
+    - /img/cosmic-bg.svg
+    - /img/cosmic-bg.svg
+    - /img/cosmic-bg.svg
+    - /img/cosmic-bg.svg
+    - /img/cosmic-bg.svg
 
 error_img:
   flink: /img/friend_404.gif
@@ -72,7 +72,7 @@ error_img:
 error_404:
   enable: true
   subtitle: '迷失在深空中...'
-  background: https://images.unsplash.com/photo-1419242908494-8ec1c1bc1e6c?w=1920&q=80
+  background: /img/cosmic-bg.svg
 
 post_meta:
   page:
@@ -440,3 +440,4 @@ CDN:
   internal_provider: local
   third_party_provider: jsdelivr
   version: true
+

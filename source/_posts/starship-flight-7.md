@@ -1,4 +1,4 @@
----
+﻿---
 title: 星舰第七次试飞：人类航天的新里程碑
 date: 2025-01-17 10:00:00
 categories: 星舰
@@ -6,7 +6,7 @@ tags:
   - SpaceX
   - 星舰
   - 超重型火箭
-cover: https://images.unsplash.com/photo-1517976332405-cb9b77a96c1e?w=800&q=80
+cover: /img/cosmic-bg.svg
 ---
 
 > 🚀 "这是一个令人难以置信的时代，我们正在见证人类成为多行星物种的第一步。" — Elon Musk
@@ -48,3 +48,4 @@ cover: https://images.unsplash.com/photo-1517976332405-cb9b77a96c1e?w=800&q=80
 > "你不需要每次都完美，你只需要比上一次更好。"
 
 下一次，星辰大海。 🌌
+

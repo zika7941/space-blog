@@ -20,3 +20,5 @@ Thumbs.db
 # Env / secrets
 .env
 .env.*
+# Theme (generated from npm install)
+themes/butterfly/

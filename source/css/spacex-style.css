@@ -1,50 +1,455 @@
-/* SpaceX-style overrides */
+/* ============================================
+   SpaceX 太空科技风格 — Butterfly 主题覆盖
+   ============================================ */
 
+/* ------- 太空背景 ------- */
+html, body {
+  background:
+    radial-gradient(ellipse at 20% 30%, rgba(26,10,62,.4) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 70%, rgba(13,42,74,.35) 0%, transparent 45%),
+    radial-gradient(ellipse at 50% 10%, rgba(61,26,110,.25) 0%, transparent 40%),
+    #050810 !important;
+  background-attachment: fixed !important;
+}
+body {
+  background-color: #050810 !important;
+  scroll-behavior: smooth;
+}
+::selection { background: rgba(0,168,255,.4) !important; color: #fff !important; }
+
+/* 星空粒子点 */
+body::before {
+  content: "";
+  position: fixed; inset: 0; z-index: -1; pointer-events: none;
+  background-image:
+    radial-gradient(1px 1px at 10% 20%, rgba(255,255,255,.7) 50%, transparent 50%),
+    radial-gradient(1px 1px at 30% 55%, rgba(255,255,255,.5) 50%, transparent 50%),
+    radial-gradient(1px 1px at 50% 10%, rgba(255,255,255,.6) 50%, transparent 50%),
+    radial-gradient(1px 1px at 70% 40%, rgba(167,139,250,.6) 50%, transparent 50%),
+    radial-gradient(1px 1px at 85% 75%, rgba(0,168,255,.5) 50%, transparent 50%),
+    radial-gradient(1px 1px at 15% 80%, rgba(255,255,255,.4) 50%, transparent 50%),
+    radial-gradient(1px 1px at 45% 65%, rgba(255,107,107,.4) 50%, transparent 50%),
+    radial-gradient(1px 1px at 90% 15%, rgba(255,255,255,.5) 50%, transparent 50%),
+    radial-gradient(1px 1px at 5% 45%, rgba(255,255,255,.3) 50%, transparent 50%),
+    radial-gradient(1px 1px at 60% 85%, rgba(255,255,255,.5) 50%, transparent 50%),
+    radial-gradient(2px 2px at 25% 35%, rgba(255,255,255,.8) 50%, transparent 50%),
+    radial-gradient(1px 1px at 75% 55%, rgba(255,255,255,.4) 50%, transparent 50%);
+  background-size: 800px 600px;
+  background-repeat: repeat;
+  animation: twinkle 4s ease-in-out infinite alternate;
+  z-index: -2;
+}
+@keyframes twinkle {
+  0% { opacity: .6; }
+  100% { opacity: 1; }
+}
+
+/* 全局盒子模型 */
 #page-header { background-color: #000 !important; }
-#site-title, #site-subtitle { text-shadow: 0 0 20px rgba(0,168,255,0.5) !important; }
-#nav-menu .menus_item a { font-weight: 500; }
-.layout { background: transparent !important; }
-.article-container { background: rgba(10,10,10,0.8) !important; }
-body { background-color: #000 !important; }
-#footer { background: #0a0a0a !important; }
-.post-block { background: rgba(15,15,15,0.9) !important; }
-a { transition: color 0.2s; }
-.card-content { background: rgba(15,15,15,0.85) !important; }
-::selection { background: rgba(0,168,255,0.3) !important; }
-#toggle-mode { display: none !important; }
 
-/* 首页标题发光 */
-#site-title {
-  font-family: "Orbitron", sans-serif !important;
-  letter-spacing: 3px;
-}
-
-/* 导航栏 */
+/* ------- 导航栏（类 SpaceX 透明浮动） ------- */
 #nav {
-  backdrop-filter: blur(10px);
-  background: rgba(0,0,0,0.7) !important;
+  background: rgba(0,0,0,.6) !important;
+  backdrop-filter: blur(16px) !important;
+  -webkit-backdrop-filter: blur(16px) !important;
+  border-bottom: 1px solid rgba(255,255,255,.06) !important;
+  transition: background .4s, box-shadow .3s !important;
+}
+#nav:hover {
+  background: rgba(0,0,0,.85) !important;
+}
+#nav #site-name {
+  font-family: "Orbitron", sans-serif !important;
+  font-weight: 700 !important;
+  font-size: 1.1rem !important;
+  letter-spacing: 4px !important;
+  text-shadow: 0 0 20px rgba(0,168,255,.3) !important;
+}
+#nav .menus_item a {
+  font-family: "JetBrains Mono", "SF Mono", monospace !important;
+  font-size: .72rem !important;
+  letter-spacing: 2px !important;
+  text-transform: uppercase !important;
+  font-weight: 400 !important;
+  color: rgba(255,255,255,.7) !important;
+  transition: color .2s !important;
+}
+#nav .menus_item a:hover {
+  color: #fff !important;
+  text-shadow: 0 0 12px rgba(0,168,255,.4) !important;
+}
+#nav #site-name:hover { text-shadow: 0 0 30px rgba(0,168,255,.6) !important; }
+
+/* ------- 首页 Hero（全屏大图+宇航员感） ------- */
+#page-header #site-info {
+  padding: 8rem 0 6rem !important;
+}
+#page-header #site-title {
+  font-family: "Orbitron", "Noto Sans SC", sans-serif !important;
+  font-weight: 900 !important;
+  font-size: clamp(2.4rem, 6vw, 4.8rem) !important;
+  letter-spacing: 4px !important;
+  line-height: 1.1 !important;
+  text-shadow: 0 0 40px rgba(0,168,255,.25), 0 4px 30px rgba(0,0,0,.5) !important;
+  animation: titleReveal 1.4s cubic-bezier(.2,.8,.3,1) both !important;
+}
+@keyframes titleReveal {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+#page-header #site-subtitle {
+  font-family: "JetBrains Mono", monospace !important;
+  font-size: .85rem !important;
+  letter-spacing: 6px !important;
+  text-transform: uppercase !important;
+  color: rgba(255,255,255,.5) !important;
+  text-shadow: 0 0 20px rgba(0,168,255,.2) !important;
+  margin-top: 16px !important;
+}
+#page-header #site-subtitle span {
+  display: inline-block;
+  border: 1px solid rgba(255,255,255,.12);
+  padding: 6px 18px;
+  letter-spacing: 4px;
+  font-size: .72rem;
+}
+/* 首页顶部图高度 */
+#page-header.full_page {
+  min-height: 100vh !important;
 }
 
-/* 文章卡片悬停效果 */
+/* ------- 滚动条（科技蓝） ------- */
+::-webkit-scrollbar { width: 7px; }
+::-webkit-scrollbar-track { background: #000 !important; }
+::-webkit-scrollbar-thumb { background: rgba(0,168,255,.3) !important; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(0,168,255,.6) !important; }
+
+/* ------- 主内容区 ------- */
+.layout {
+  background: transparent !important;
+}
+.layout > div:first-child {
+  background: transparent !important;
+}
+
+/* ------- 文章卡片（SpaceX 级悬停） ------- */
 .recent-post-item {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background: rgba(15,15,20,.75) !important;
+  border: 1px solid rgba(255,255,255,.06) !important;
+  border-radius: 0 !important;
+  transition: transform .4s cubic-bezier(.2,.8,.3,1), border-color .3s, box-shadow .3s !important;
+  overflow: hidden !important;
+  margin-bottom: 20px !important;
 }
 .recent-post-item:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 30px rgba(0,168,255,0.15);
+  transform: translateY(-4px) !important;
+  border-color: rgba(0,168,255,.25) !important;
+  box-shadow: 0 12px 40px rgba(0,0,0,.5), 0 0 30px rgba(0,168,255,.08) !important;
+}
+.recent-post-item .post_cover {
+  border-radius: 0 !important;
+}
+.recent-post-item .recent-post-info {
+  padding: 24px 28px !important;
+}
+.recent-post-item .recent-post-info .article-title {
+  font-family: -apple-system, "Noto Sans SC", "PingFang SC", sans-serif !important;
+  font-weight: 700 !important;
+  font-size: 1.25rem !important;
+  letter-spacing: 0 !important;
+  line-height: 1.25 !important;
+  transition: color .2s !important;
+}
+.recent-post-item .recent-post-info .article-title:hover {
+  color: #00a8ff !important;
+}
+.recent-post-item .recent-post-info .article-meta-wrap {
+  font-family: "JetBrains Mono", monospace !important;
+  font-size: .68rem !important;
+  letter-spacing: 1px !important;
+  color: rgba(255,255,255,.35) !important;
+  margin-top: 8px !important;
+}
+.recent-post-item .recent-post-info .content {
+  font-size: .9rem !important;
+  color: rgba(255,255,255,.55) !important;
+  line-height: 1.65 !important;
+  margin-top: 12px !important;
+}
+.recent-post-item .recent-post-info .content::before {
+  content: "// " !important;
+  color: rgba(0,168,255,.5);
+  font-family: "JetBrains Mono", monospace;
+  font-size: .72rem;
 }
 
-/* 滚动条 */
-::-webkit-scrollbar { width: 8px; }
-::-webkit-scrollbar-track { background: #000; }
-::-webkit-scrollbar-thumb { background: #00a8ff; border-radius: 4px; }
-
-/* 分页器 */
-.page-nav a, .page-nav span {
-  background: rgba(0,168,255,0.1) !important;
-  border: 1px solid rgba(0,168,255,0.3) !important;
+/* ------- 分类标签（暗色胶囊） ------- */
+.article-meta-wrap .article-meta-label,
+.article-meta-wrap .article-meta__tags {
+  font-family: "JetBrains Mono", monospace !important;
 }
-.page-nav .current {
+.article-meta-wrap .article-meta-tag {
+  background: rgba(0,168,255,.1) !important;
+  border: 1px solid rgba(0,168,255,.2) !important;
+  padding: 3px 10px !important;
+  font-size: .66rem !important;
+  border-radius: 0 !important;
+  transition: all .2s !important;
+}
+.article-meta-wrap .article-meta-tag:hover {
+  background: rgba(0,168,255,.2) !important;
+  border-color: rgba(0,168,255,.5) !important;
+}
+
+/* ------- 文章详情页 ------- */
+.post-block {
+  background: rgba(15,15,20,.85) !important;
+  border: 1px solid rgba(255,255,255,.06) !important;
+  border-radius: 0 !important;
+  padding: 40px 44px !important;
+}
+#article-container {
+  background: transparent !important;
+}
+#article-container h1 {
+  font-family: -apple-system, "Noto Sans SC", sans-serif !important;
+  font-weight: 800 !important;
+  font-size: 2.2rem !important;
+  letter-spacing: -0.5px !important;
+  line-height: 1.15 !important;
+}
+#article-container h2 {
+  font-weight: 700 !important;
+  font-size: 1.4rem !important;
+  border-left: 3px solid #00a8ff !important;
+  padding-left: 16px !important;
+}
+#article-container h3 {
+  font-weight: 600 !important;
+  font-size: 1.15rem !important;
+}
+#article-container p {
+  color: rgba(255,255,255,.75) !important;
+  line-height: 1.8 !important;
+  font-size: .97rem !important;
+}
+#article-container code {
+  background: rgba(0,168,255,.08) !important;
+  color: #00a8ff !important;
+  padding: 3px 8px !important;
+  font-family: "JetBrains Mono", monospace !important;
+  font-size: .85rem !important;
+  border: 1px solid rgba(0,168,255,.15) !important;
+  border-radius: 0 !important;
+}
+#article-container pre {
+  background: #0a0a0f !important;
+  border: 1px solid rgba(255,255,255,.08) !important;
+  border-radius: 0 !important;
+}
+#article-container blockquote {
+  border-left: 3px solid #00a8ff !important;
+  background: rgba(0,168,255,.04) !important;
+  padding: 12px 22px !important;
+}
+#article-container blockquote p {
+  color: rgba(255,255,255,.6) !important;
+  font-style: italic !important;
+}
+
+/* ------- 侧边栏 ------- */
+#aside-content .card-widget {
+  background: rgba(15,15,20,.7) !important;
+  border: 1px solid rgba(255,255,255,.06) !important;
+  border-radius: 0 !important;
+}
+#aside-content .card-widget .card-content {
+  background: transparent !important;
+}
+#aside-content .card-widget .item-headline {
+  font-family: "JetBrains Mono", monospace !important;
+  font-size: .72rem !important;
+  letter-spacing: 3px !important;
+  text-transform: uppercase !important;
+  color: rgba(255,255,255,.5) !important;
+}
+#aside-content .card-widget .item-headline i {
+  color: #00a8ff !important;
+}
+#aside-content .card-widget .card-info-avatar {
+  border: 2px solid rgba(0,168,255,.3) !important;
+  box-shadow: 0 0 20px rgba(0,168,255,.12) !important;
+}
+#aside-content .card-widget .card-info-data {
+  font-family: "JetBrains Mono", monospace !important;
+}
+#aside-content .card-widget .card-info-data .card-info-data-number {
+  color: #00a8ff !important;
+  font-weight: 700 !important;
+}
+#aside-content .card-widget .card-info-data .card-info-data-item:hover {
+  background: rgba(0,168,255,.06) !important;
+}
+
+/* ------- 归档/分类/标签页 ------- */
+#archives, .category-lists, .tag-cloud {
+  background: rgba(15,15,20,.85) !important;
+  border: 1px solid rgba(255,255,255,.06) !important;
+  padding: 28px 32px !important;
+}
+#archives .article-title,
+.category-lists .category-list-link,
+.tag-cloud-tags a {
+  transition: color .2s !important;
+}
+#archives .article-title:hover,
+.category-lists .category-list-link:hover,
+.tag-cloud-tags a:hover {
+  color: #00a8ff !important;
+}
+
+/* ------- 分页器 ------- */
+.pagination {
+  margin-top: 20px !important;
+}
+.pagination .page-number,
+.pagination .prev,
+.pagination .next {
+  background: rgba(0,168,255,.08) !important;
+  border: 1px solid rgba(0,168,255,.15) !important;
+  color: rgba(255,255,255,.7) !important;
+  font-family: "JetBrains Mono", monospace !important;
+  font-size: .75rem !important;
+  border-radius: 0 !important;
+  transition: all .2s !important;
+}
+.pagination .page-number:hover,
+.pagination .prev:hover,
+.pagination .next:hover {
+  background: rgba(0,168,255,.15) !important;
+  color: #fff !important;
+}
+.pagination .page-number.current {
   background: #00a8ff !important;
   color: #000 !important;
+  font-weight: 700 !important;
+  border-color: #00a8ff !important;
+}
+
+/* ------- 底部 ------- */
+#footer {
+  background: #050505 !important;
+  border-top: 1px solid rgba(255,255,255,.05) !important;
+}
+#footer #footer-wrap {
+  font-family: "JetBrains Mono", monospace !important;
+  font-size: .72rem !important;
+  letter-spacing: 2px !important;
+  color: rgba(255,255,255,.3) !important;
+}
+#footer #footer-wrap a {
+  color: rgba(255,255,255,.5) !important;
+}
+#footer #footer-wrap a:hover {
+  color: #00a8ff !important;
+}
+
+/* ------- 阅读进度条（SpaceX 蓝色） ------- */
+#loading-bar {
+  background: #00a8ff !important;
+  height: 2px !important;
+}
+#loading-bar .bar {
+  background: #00a8ff !important;
+  box-shadow: 0 0 10px rgba(0,168,255,.5) !important;
+}
+
+/* ------- 表格 ------- */
+#article-container table {
+  border: 1px solid rgba(255,255,255,.1) !important;
+}
+#article-container table th {
+  background: rgba(0,168,255,.08) !important;
+  border-bottom: 2px solid #00a8ff !important;
+  font-family: "JetBrains Mono", monospace !important;
+  font-size: .75rem !important;
+  letter-spacing: 1px !important;
+  text-transform: uppercase !important;
+}
+#article-container table td {
+  border-bottom: 1px solid rgba(255,255,255,.06) !important;
+}
+
+/* ------- 返回顶部 ------- */
+#go-up {
+  background: rgba(0,168,255,.12) !important;
+  border: 1px solid rgba(0,168,255,.2) !important;
+  color: #00a8ff !important;
+  border-radius: 0 !important;
+  transition: all .2s !important;
+}
+#go-up:hover {
+  background: rgba(0,168,255,.25) !important;
+  box-shadow: 0 0 20px rgba(0,168,255,.15) !important;
+}
+
+/* ------- 文章标签 ------- */
+.tag_share .tag-list a {
+  background: rgba(0,168,255,.08) !important;
+  border: 1px solid rgba(0,168,255,.15) !important;
+  border-radius: 0 !important;
+  font-family: "JetBrains Mono", monospace !important;
+  font-size: .66rem !important;
+  letter-spacing: 1px !important;
+  transition: all .2s !important;
+}
+.tag_share .tag-list a:hover {
+  background: rgba(0,168,255,.2) !important;
+  border-color: rgba(0,168,255,.4) !important;
+}
+
+/* ------- 文章目录 ------- */
+#aside-content .card-toc {
+  background: rgba(15,15,20,.7) !important;
+  border: 1px solid rgba(255,255,255,.06) !important;
+  border-radius: 0 !important;
+}
+#aside-content .card-toc .toc-item.active .toc-link {
+  color: #00a8ff !important;
+  border-left: 2px solid #00a8ff !important;
+}
+#aside-content .card-toc .toc-link {
+  border-left: 2px solid transparent !important;
+  transition: all .2s !important;
+}
+
+/* ------- 文章内链接 ------- */
+#article-container a {
+  color: #00a8ff !important;
+  text-decoration: none !important;
+  border-bottom: 1px solid rgba(0,168,255,.3) !important;
+  transition: all .2s !important;
+}
+#article-container a:hover {
+  color: #fff !important;
+  border-bottom-color: #fff !important;
+}
+
+/* ------- 移动端适配 ------- */
+@media (max-width: 768px) {
+  #page-header #site-info { padding: 5rem 0 4rem !important; }
+  #page-header #site-title { font-size: 2rem !important; letter-spacing: 2px !important; }
+  .post-block { padding: 24px 20px !important; }
+  #article-container h1 { font-size: 1.6rem !important; }
+  .recent-post-item .recent-post-info { padding: 18px 20px !important; }
+  .recent-post-item .recent-post-info .article-title { font-size: 1.1rem !important; }
+}
+
+/* ------- 加载动画（火箭发射感） ------- */
+@keyframes spaceGlow {
+  0%, 100% { opacity: 1; }
+  50% { opacity: .6; }
+}
+#page-header #site-title {
+  animation: titleReveal 1.4s cubic-bezier(.2,.8,.3,1) both !important;
 }
