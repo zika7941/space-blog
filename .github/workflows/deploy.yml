@@ -33,15 +33,6 @@ jobs:
       - name: Generate static files
         run: npx hexo generate
 
-      - name: Copy nasa-clone to root
-        run: |
-          mkdir -p temp-nc
-          cp -r public/nasa-clone/* temp-nc/
-          rm -rf public/nasa-clone
-          cp temp-nc/index.html public/index.html
-          cp temp-nc/screenshot.png public/screenshot.png
-          rm -rf temp-nc
-
       - name: Setup Pages
         uses: actions/configure-pages@v4
 
