@@ -93,23 +93,23 @@ post_meta:
 index_site_info_top: 40%
 index_top_img_height: 100vh
 
-# 首页副标题 — 打字机效果
+# 首页副标题 — 控制台日志
 subtitle:
   enable: true
   effect: true
   typed_option:
-    typeSpeed: 60
+    typeSpeed: 70
     backSpeed: 30
     startDelay: 300
     backDelay: 2000
     loop: true
   source: false
   sub:
-    - 探索宇宙 · 驶向星辰大海
-    - Ad Astra Per Aspera
-    - Making Humanity Multiplanetary
-    - 火箭 · 星舰 · 深空探测
-    - The Future of Space Technology
+    - MISSION CONTROL · SYSTEM ONLINE
+    - LOG: 5 MISSIONS · 00 FAILED
+    - STARSHIP · RAPTOR · JWST · MARS
+    - THE FUTURE IS ENGINEERED
+    - TRACKING · FRAMING · RECORDING
 
 index_layout: 3
 
@@ -158,7 +158,7 @@ footer:
   copyright:
     enable: true
     version: true
-  custom_text: 🚀 To Mars and Beyond
+  custom_text: // SIGNAL ACQUIRED · TO MARS AND BEYOND
 
 # Aside
 aside:
@@ -173,7 +173,7 @@ aside:
     category: true
   card_author:
     enable: true
-    description: 太空科技爱好者 · 关注火箭、星舰与深空探索
+    description: 航天工程记录者 · 追踪发射台到火星
     button:
       enable: false
   card_announcement:
@@ -339,8 +339,8 @@ font:
   code_font_family: '"JetBrains Mono", "Fira Code", Consolas, Monaco, monospace'
 
 blog_title_font:
-  font_link: https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap
-  font_family: '"Orbitron", "Noto Sans SC", sans-serif'
+  font_link: https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap
+  font_family: '"Share Tech Mono", "Noto Sans SC", sans-serif'
 
 hr_icon:
   enable: true
@@ -350,13 +350,13 @@ hr_icon:
 activate_power_mode:
   enable: false
 
-# Canvas nest — 星空粒子效果
+# Canvas nest — 信号轨迹
 canvas_nest:
   enable: true
-  color: '0,168,255'
-  opacity: 0.5
+  color: '0,255,136'
+  opacity: 0.25
   zIndex: -1
-  count: 120
+  count: 60
   mobile: false
 
 canvas_ribbon:
@@ -432,8 +432,10 @@ inject:
     - <link rel="preconnect" href="https://fonts.googleapis.com">
     - <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     - <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6/css/all.min.css">
+    - <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap">
     - <link rel="stylesheet" href="/css/spacex-style.css">
   bottom:
+    - '<div class="mission-bar"><span class="brand">ZIKA LAB</span><span>//</span><span><span class="dot"></span><span class="val">SYS ONLINE</span></span><span class="hide-sm">T+<span class="val" id="missionT">00:00:00</span></span><span class="hide-sm">ORBIT <span class="warn">LEO</span></span><span class="right"><span>LAT <span class="val">28.5°N</span></span><span>LON <span class="val">80.6°W</span></span><span class="ok">SIG OK</span></span></div><script>var _t0=Date.now();setInterval(function(){var d=Math.floor((Date.now()-_t0)/1000),h=String(Math.floor(d/3600)).padStart(2,"0"),m=String(Math.floor(d/60)%60).padStart(2,"0"),s=String(d%60).padStart(2,"0");document.getElementById("missionT").textContent=h+": "+m+": "+s;},1000);</script>'
 
 # CDN
 CDN:
