@@ -3,77 +3,255 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ZIKA · 加载中</title>
+<title>ZIKA · 空间科技</title>
 <style>
+:root{
+  --bg:#05070d;
+  --bg-2:#0a0f1a;
+  --panel:rgba(255,255,255,.03);
+  --border:rgba(255,255,255,.08);
+  --text:#e8ecf4;
+  --muted:#8a94a8;
+  --accent:#00a8ff;
+  --accent-2:#7c6cff;
+  --red:#ff4d6d;
+  --radius:16px;
+}
 *{margin:0;padding:0;box-sizing:border-box}
-html,body{width:100%;height:100%;overflow:hidden}
+html{scroll-behavior:smooth}
 body{
-  font-family:"-apple-system","Segoe UI","Noto Sans SC",sans-serif;
-  background:#000;
-  color:#fff;
-  display:flex;
-  align-items:center;
-  justify-content:center;
+  font-family:"-apple-system","Segoe UI","PingFang SC","Noto Sans SC","Microsoft YaHei",sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.6;
+  overflow-x:hidden;
 }
-.wrap{
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  gap:24px;
-  animation:fadeIn 1.2s ease;
+a{color:inherit;text-decoration:none}
+/* ---------- canvas starfield ---------- */
+#stars{position:fixed;inset:0;z-index:0;pointer-events:none}
+/* ---------- nav ---------- */
+.nav{
+  position:fixed;top:0;left:0;right:0;z-index:50;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:20px clamp(20px,5vw,64px);
+  background:linear-gradient(to bottom, rgba(5,7,13,.85), rgba(5,7,13,0));
+  -webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);
 }
-.logo{
-  font-size:2.8rem;
-  font-weight:800;
-  letter-spacing:.12em;
-  color:#fff;
-  position:relative;
+.brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:.18em}
+.brand .dot{width:9px;height:9px;border-radius:50%;background:var(--accent);box-shadow:0 0 14px var(--accent)}
+.nav-links{display:flex;gap:28px;font-size:.85rem;color:var(--muted);font-weight:600}
+.nav-links a{position:relative;transition:color .2s}
+.nav-links a:hover{color:var(--text)}
+.nav-links a::after{content:"";position:absolute;left:0;bottom:-4px;width:0;height:1.5px;background:var(--accent);transition:width .25s}
+.nav-links a:hover::after{width:100%}
+/* ---------- hero ---------- */
+.hero{
+  position:relative;z-index:1;
+  min-height:100vh;
+  display:flex;flex-direction:column;justify-content:center;
+  padding:120px clamp(20px,5vw,64px) 60px;
+  max-width:1200px;margin:0 auto;
 }
-.logo::after{
-  content:"";
-  display:inline-block;
-  width:10px;
-  height:10px;
-  margin-left:10px;
-  background:#00a8ff;
-  border-radius:50%;
-  animation:blink 1.4s ease-in-out infinite;
+.kicker{display:inline-flex;align-items:center;gap:10px;font-size:.75rem;letter-spacing:.28em;color:var(--accent);text-transform:uppercase;margin-bottom:26px}
+.kicker .live{width:7px;height:7px;border-radius:50%;background:var(--accent);box-shadow:0 0 12px var(--accent);animation:pulse 2s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
+.hero h1{
+  font-size:clamp(2.4rem,7vw,5rem);
+  font-weight:800;line-height:1.05;letter-spacing:-.02em;
+  margin-bottom:22px;
 }
-.sub{
-  font-size:.8rem;
-  font-weight:600;
-  letter-spacing:.3em;
-  color:rgba(255,255,255,.45);
-  text-transform:uppercase;
+.hero h1 .grad{background:linear-gradient(100deg,var(--accent),var(--accent-2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero .sub{font-size:clamp(1rem,2vw,1.15rem);color:var(--muted);max-width:560px;margin-bottom:40px}
+.cta-row{display:flex;flex-wrap:wrap;gap:16px}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:14px 30px;border-radius:999px;font-weight:700;font-size:.9rem;transition:transform .2s,box-shadow .2s,background .2s}
+.btn-primary{background:var(--accent);color:#04121f}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(0,168,255,.35)}
+.btn-ghost{border:1px solid var(--border);color:var(--text);background:var(--panel)}
+.btn-ghost:hover{border-color:var(--accent);transform:translateY(-2px)}
+.btn .arr{transition:transform .2s}
+.btn:hover .arr{transform:translateX(4px)}
+/* ---------- stats strip ---------- */
+.stats{
+  position:relative;z-index:1;max-width:1200px;margin:0 auto;padding:0 clamp(20px,5vw,64px) 90px;
+  display:grid;grid-template-columns:repeat(4,1fr);gap:1px;
+  background:var(--border);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;
 }
-.line{
-  width:120px;
-  height:1px;
-  background:linear-gradient(90deg, transparent, rgba(0,168,255,.6), transparent);
+.stat{background:var(--bg-2);padding:34px 28px}
+.stat .num{font-size:2rem;font-weight:800;background:linear-gradient(100deg,#fff,var(--accent));-webkit-background-clip:text;background-clip:text;color:transparent}
+.stat .lbl{font-size:.72rem;letter-spacing:.14em;color:var(--muted);text-transform:uppercase;margin-top:6px}
+/* ---------- about ---------- */
+.section{position:relative;z-index:1;max-width:1200px;margin:0 auto;padding:0 clamp(20px,5vw,64px) 110px}
+.section-label{font-size:.72rem;letter-spacing:.26em;color:var(--accent);text-transform:uppercase;margin-bottom:20px}
+.section h2{font-size:clamp(1.6rem,3.5vw,2.3rem);font-weight:800;margin-bottom:20px;line-height:1.2}
+.about-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:40px;align-items:start}
+.about-text{color:var(--muted);font-size:1rem}
+.about-text p{margin-bottom:18px}
+.about-text strong{color:var(--text)}
+.about-card{
+  border:1px solid var(--border);border-radius:var(--radius);background:var(--panel);
+  padding:28px;position:relative;overflow:hidden;
 }
-.status{
-  font-size:.72rem;
-  color:rgba(255,255,255,.35);
-  font-family:"JetBrains Mono",monospace;
+.about-card::before{content:"";position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--accent),transparent)}
+.about-card h4{font-size:.75rem;letter-spacing:.2em;color:var(--muted);text-transform:uppercase;margin-bottom:18px}
+.skill{display:flex;flex-wrap:wrap;gap:10px}
+.tag{font-size:.78rem;padding:8px 16px;border-radius:999px;border:1px solid var(--border);background:var(--bg-2);color:var(--muted);transition:all .2s}
+.tag:hover{border-color:var(--accent);color:var(--text)}
+/* ---------- projects ---------- */
+.proj-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.proj{
+  border:1px solid var(--border);border-radius:var(--radius);background:var(--panel);
+  padding:26px;position:relative;overflow:hidden;transition:transform .25s,border-color .25s;
 }
-.status .ok{color:#00ff88}
-
-@keyframes blink{
-  0%,100%{opacity:1;box-shadow:0 0 12px #00a8ff}
-  50%{opacity:.3;box-shadow:none}
+.proj:hover{transform:translateY(-4px);border-color:rgba(0,168,255,.4)}
+.proj::before{content:"";position:absolute;top:-40%;right:-30%;width:200px;height:200px;border-radius:50%;background:radial-gradient(circle, rgba(0,168,255,.12), transparent 70%)}
+.proj .ico{width:42px;height:42px;border-radius:10px;background:linear-gradient(135deg,var(--accent),var(--accent-2));display:flex;align-items:center;justify-content:center;font-size:1.2rem;margin-bottom:18px}
+.proj h3{font-size:1.05rem;font-weight:700;margin-bottom:8px}
+.proj p{font-size:.85rem;color:var(--muted);margin-bottom:16px}
+.proj .go{font-size:.78rem;font-weight:700;color:var(--accent);display:inline-flex;align-items:center;gap:6px}
+.proj .go .arr{transition:transform .2s}
+.proj:hover .go .arr{transform:translateX(4px)}
+/* ---------- footer ---------- */
+.footer{position:relative;z-index:1;border-top:1px solid var(--border);padding:50px clamp(20px,5vw,64px) 60px}
+.footer-inner{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
+.footer .copy{font-size:.82rem;color:var(--muted)}
+.footer .social{display:flex;gap:18px}
+.footer .social a{font-size:.82rem;color:var(--muted);transition:color .2s}
+.footer .social a:hover{color:var(--accent)}
+/* ---------- responsive ---------- */
+@media(max-width:860px){
+  .stats{grid-template-columns:repeat(2,1fr)}
+  .about-grid{grid-template-columns:1fr}
+  .proj-grid{grid-template-columns:1fr}
+  .nav-links{display:none}
 }
-@keyframes fadeIn{
-  from{opacity:0;transform:translateY(12px)}
-  to{opacity:1;transform:translateY(0)}
+@media(max-width:480px){
+  .stats{grid-template-columns:1fr 1fr}
 }
 </style>
 </head>
 <body>
-<div class="wrap">
-  <div class="logo">ZIKA</div>
-  <div class="line"></div>
-  <div class="sub">System Initializing</div>
-  <div class="status">// <span class="ok">STATUS</span> · BUILD IN PROGRESS</div>
+<canvas id="stars"></canvas>
+
+<nav class="nav">
+  <a href="#" class="brand"><span class="dot"></span>ZIKA</a>
+  <div class="nav-links">
+    <a href="#about">关于</a>
+    <a href="#projects">项目</a>
+    <a href="/blog/">博客</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="kicker"><span class="live"></span>Personal Space &amp; Tech</div>
+  <h1>探索未知，<br><span class="grad">构建未来。</span></h1>
+  <p class="sub">你好，我是 ZIKA。一名热衷于空间科技与前端开发的工程师。这里记录我对宇宙、代码与产品的思考与探索。</p>
+  <div class="cta-row">
+    <a href="/blog/" class="btn btn-primary">进入博客 <span class="arr">→</span></a>
+    <a href="#projects" class="btn btn-ghost">查看项目</a>
+  </div>
+</section>
+
+<div class="stats">
+  <div class="stat"><div class="num">5+</div><div class="lbl">博客文章</div></div>
+  <div class="stat"><div class="num">3</div><div class="lbl">核心领域</div></div>
+  <div class="stat"><div class="num">∞</div><div class="lbl">探索热情</div></div>
+  <div class="stat"><div class="num">01</div><div class="lbl">星际旅程</div></div>
 </div>
+
+<section class="section" id="about">
+  <div class="section-label">About / 关于我</div>
+  <div class="about-grid">
+    <div class="about-text">
+      <h2>用代码丈量宇宙的广度</h2>
+      <p>我的兴趣横跨<strong>航天工程、空间科学</strong>与<strong>现代前端技术</strong>。我相信对未知的好奇是驱动人类前进的引擎——无论是探索火星的殖民路线，还是构建优雅的网页体验。</p>
+      <p>这个站点是我的数字基地：在这里分享研究笔记、技术实践，以及对深空未来的想象。</p>
+    </div>
+    <div class="about-card">
+      <h4>Core Stack</h4>
+      <div class="skill">
+        <span class="tag">JavaScript / TypeScript</span>
+        <span class="tag">前端工程</span>
+        <span class="tag">航天科普</span>
+        <span class="tag">产品设计</span>
+        <span class="tag">数据可视化</span>
+        <span class="tag">科幻写作</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="projects">
+  <div class="section-label">Projects / 项目</div>
+  <h2>正在进行的探索</h2>
+  <div class="proj-grid">
+    <a class="proj" href="/blog/">
+      <div class="ico">✍️</div>
+      <h3>技术博客</h3>
+      <p>关于空间科技、前端开发与个人思考的持续记录。</p>
+      <span class="go">前往阅读 <span class="arr">→</span></span>
+    </a>
+    <a class="proj" href="/archives/">
+      <div class="ico">🚀</div>
+      <h3>航天科普</h3>
+      <p>航天史、火星任务与深空探索的科普内容合集。</p>
+      <span class="go">浏览归档 <span class="arr">→</span></span>
+    </a>
+    <a class="proj" href="/about/">
+      <div class="ico">🧑‍🚀</div>
+      <h3>关于作者</h3>
+      <p>了解更多关于 ZIKA 的故事、方向与联系方式。</p>
+      <span class="go">了解更多 <span class="arr">→</span></span>
+    </a>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <span class="copy">© 2026 ZIKA · Built with curiosity</span>
+    <div class="social">
+      <a href="/about/">关于</a>
+      <a href="/blog/">博客</a>
+      <a href="https://github.com/zika7941" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var canvas=document.getElementById('stars');
+  var ctx=canvas.getContext('2d');
+  var w,h,stars;
+  function resize(){
+    w=canvas.width=window.innerWidth;
+    h=canvas.height=window.innerHeight;
+    init();
+  }
+  function init(){
+    stars=[];
+    var count=Math.min(180,Math.floor(w*h/9000));
+    for(var i=0;i<count;i++){
+      stars.push({x:Math.random()*w,y:Math.random()*h,r:Math.random()*1.4+0.3,
+        a:Math.random()*0.7+0.3,dx:(Math.random()-0.5)*0.05,dy:Math.random()*0.08+0.02});
+    }
+  }
+  function draw(){
+    ctx.clearRect(0,0,w,h);
+    for(var i=0;i<stars.length;i++){
+      var s=stars[i];
+      s.x+=s.dx;s.y+=s.dy;
+      if(s.y>h+5){s.y=-5;s.x=Math.random()*w}
+      if(s.x>w+5)s.x=-5;
+      ctx.beginPath();
+      ctx.arc(s.x,s.y,s.r,0,Math.PI*2);
+      ctx.fillStyle='rgba(255,255,255,'+s.a+')';
+      ctx.fill();
+    }
+    requestAnimationFrame(draw);
+  }
+  resize();
+  window.addEventListener('resize',resize);
+  draw();
+})();
+</script>
 </body>
 </html>
